@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="1000" height="760" fill="#ffffff"/>
+  <text x="500" y="34" font-size="22" font-weight="700" text-anchor="middle" fill="#1a1a1a">Sistema de Riego Automatizado — Diagrama de Conexiones</text>
+  <text x="500" y="56" font-size="13" text-anchor="middle" fill="#666">Arduino UNO R4 WiFi · Relé · Electroválvula 12V · LCD 20x4 · RTC DS3231</text>
+
+  <!-- ================= ARDUINO ================= -->
+  <rect x="380" y="120" width="240" height="300" rx="10" fill="#0d7377" stroke="#095457" stroke-width="2"/>
+  <text x="500" y="150" font-size="17" font-weight="700" text-anchor="middle" fill="#fff">Arduino UNO R4 WiFi</text>
+  <!-- left pins -->
+  <text x="392" y="185" font-size="13" fill="#e8fdff">5V</text>
+  <text x="392" y="212" font-size="13" fill="#e8fdff">GND</text>
+  <text x="392" y="239" font-size="13" fill="#e8fdff">VIN</text>
+  <text x="392" y="266" font-size="13" fill="#e8fdff">A4 (SDA)</text>
+  <text x="392" y="293" font-size="13" fill="#e8fdff">A5 (SCL)</text>
+  <text x="392" y="320" font-size="13" fill="#e8fdff">Pin 8</text>
+  <!-- right pins (LCD) -->
+  <text x="608" y="185" font-size="13" text-anchor="end" fill="#e8fdff">12</text>
+  <text x="608" y="212" font-size="13" text-anchor="end" fill="#e8fdff">11</text>
+  <text x="608" y="239" font-size="13" text-anchor="end" fill="#e8fdff">5</text>
+  <text x="608" y="266" font-size="13" text-anchor="end" fill="#e8fdff">4</text>
+  <text x="608" y="293" font-size="13" text-anchor="end" fill="#e8fdff">3</text>
+  <text x="608" y="320" font-size="13" text-anchor="end" fill="#e8fdff">2</text>
+  <text x="500" y="400" font-size="11" text-anchor="middle" fill="#bdeef0">(pines 12,11,5,4,3,2 → LCD)</text>
+
+  <!-- ================= DS3231 ================= -->
+  <rect x="60" y="120" width="200" height="120" rx="10" fill="#f0f4ff" stroke="#3b5bdb" stroke-width="2"/>
+  <text x="160" y="146" font-size="15" font-weight="700" text-anchor="middle" fill="#1a1a1a">RTC DS3231</text>
+  <text x="160" y="164" font-size="11" text-anchor="middle" fill="#666">(reloj con pila)</text>
+  <text x="75" y="192" font-size="13" fill="#1a1a1a">VCC</text>
+  <text x="75" y="214" font-size="13" fill="#1a1a1a">GND</text>
+  <text x="75" y="236" font-size="13" fill="#1a1a1a">SDA</text>
+  <text x="245" y="236" font-size="13" text-anchor="end" fill="#1a1a1a">SCL</text>
+  <!-- lines DS3231 -> Arduino -->
+  <path d="M245 188 H300 V182 H380" fill="none" stroke="#e03131" stroke-width="2"/>
+  <text x="312" y="177" font-size="10" fill="#e03131">VCC→5V</text>
+  <path d="M245 210 H320 V208 H380" fill="none" stroke="#495057" stroke-width="2"/>
+  <text x="330" y="203" font-size="10" fill="#495057">GND→GND</text>
+  <path d="M160 240 V300 H375 V262 H380" fill="none" stroke="#1971c2" stroke-width="2"/>
+  <text x="220" y="296" font-size="10" fill="#1971c2">SDA→A4</text>
+  <path d="M235 236 V280 H360 V289 H380" fill="none" stroke="#1971c2" stroke-width="2"/>
+  <text x="300" y="276" font-size="10" fill="#1971c2">SCL→A5</text>
+
+  <!-- ================= LCD ================= -->
+  <rect x="740" y="120" width="200" height="160" rx="10" fill="#fff9db" stroke="#e8a90c" stroke-width="2"/>
+  <text x="840" y="146" font-size="15" font-weight="700" text-anchor="middle" fill="#1a1a1a">LCD 20x4</text>
+  <text x="840" y="164" font-size="11" text-anchor="middle" fill="#666">(paralelo 4 bits)</text>
+  <text x="755" y="190" font-size="12" fill="#1a1a1a">RS→12  E→11</text>
+  <text x="755" y="210" font-size="12" fill="#1a1a1a">D4→5  D5→4</text>
+  <text x="755" y="230" font-size="12" fill="#1a1a1a">D6→3  D7→2</text>
+  <text x="755" y="252" font-size="12" fill="#1a1a1a">VDD→5V  GND→GND</text>
+  <text x="755" y="270" font-size="12" fill="#1a1a1a">RW→GND  VO→pote</text>
+  <path d="M620 200 H740" fill="none" stroke="#e8a90c" stroke-width="2"/>
+  <text x="660" y="194" font-size="10" fill="#b5850a">datos LCD</text>
+
+  <!-- Potenciometro -->
+  <rect x="740" y="300" width="200" height="70" rx="8" fill="#f8f0fc" stroke="#9c36b5" stroke-width="2"/>
+  <text x="840" y="325" font-size="13" font-weight="700" text-anchor="middle" fill="#1a1a1a">Potenciómetro 10kΩ</text>
+  <text x="840" y="345" font-size="11" text-anchor="middle" fill="#555">extremos: 5V y GND</text>
+  <text x="840" y="361" font-size="11" text-anchor="middle" fill="#555">centro → VO (contraste)</text>
+
+  <!-- ================= RELÉ ================= -->
+  <rect x="380" y="480" width="240" height="120" rx="10" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+  <text x="500" y="506" font-size="15" font-weight="700" text-anchor="middle" fill="#1a1a1a">Módulo Relé (1 canal)</text>
+  <text x="500" y="523" font-size="11" text-anchor="middle" fill="#666">active-LOW</text>
+  <text x="395" y="550" font-size="13" fill="#1a1a1a">IN1</text>
+  <text x="395" y="572" font-size="13" fill="#1a1a1a">VCC</text>
+  <text x="395" y="594" font-size="13" fill="#1a1a1a">GND</text>
+  <text x="605" y="550" font-size="13" text-anchor="end" fill="#1a1a1a">COM</text>
+  <text x="605" y="572" font-size="13" text-anchor="end" fill="#1a1a1a">NO</text>
+  <!-- Arduino pin8 -> IN1 -->
+  <path d="M380 320 H340 V545 H395" fill="none" stroke="#f08c00" stroke-width="2"/>
+  <text x="300" y="440" font-size="10" fill="#d9820a">Pin 8 → IN1</text>
+  <!-- 5V/GND to relay -->
+  <path d="M420 480 V440 H430 V420" fill="none" stroke="#e03131" stroke-width="2"/>
+  <text x="432" y="462" font-size="10" fill="#e03131">VCC→5V</text>
+  <path d="M460 480 V450 H470 V420" fill="none" stroke="#495057" stroke-width="2"/>
+  <text x="472" y="466" font-size="10" fill="#495057">GND→GND</text>
+
+  <!-- ================= FUENTE 12V ================= -->
+  <rect x="60" y="500" width="200" height="90" rx="10" fill="#fff0f6" stroke="#c2255c" stroke-width="2"/>
+  <text x="160" y="528" font-size="15" font-weight="700" text-anchor="middle" fill="#1a1a1a">Fuente 12V DC</text>
+  <text x="160" y="546" font-size="11" text-anchor="middle" fill="#666">(1–2 A)</text>
+  <text x="75" y="572" font-size="13" fill="#1a1a1a">+12V</text>
+  <text x="245" y="572" font-size="13" text-anchor="end" fill="#1a1a1a">GND</text>
+  <!-- +12V -> COM -->
+  <path d="M120 590 V620 H500 V600" fill="none" stroke="#e03131" stroke-width="2.5"/>
+  <text x="250" y="614" font-size="11" fill="#e03131">+12V → COM del relé</text>
+  <!-- Fuente GND -> Arduino VIN GND (comun) -->
+  <path d="M200 500 V470 H330 V239 H380" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="210" y="464" font-size="10" fill="#495057">GND común → VIN/GND Arduino</text>
+
+  <!-- ================= VÁLVULA ================= -->
+  <rect x="700" y="500" width="220" height="110" rx="10" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+  <text x="810" y="528" font-size="15" font-weight="700" text-anchor="middle" fill="#1a1a1a">Electroválvula 12V</text>
+  <text x="810" y="546" font-size="11" text-anchor="middle" fill="#666">solenoide (normalmente cerrada)</text>
+  <text x="715" y="576" font-size="13" fill="#1a1a1a">bobina +</text>
+  <text x="905" y="576" font-size="13" text-anchor="end" fill="#1a1a1a">bobina −</text>
+  <!-- NO -> valvula+ -->
+  <path d="M620 545 H700" fill="none" stroke="#e03131" stroke-width="2.5"/>
+  <text x="630" y="539" font-size="10" fill="#e03131">NO → válvula(+)</text>
+  <!-- valvula- -> fuente GND -->
+  <path d="M905 590 V660 H160 V590" fill="none" stroke="#495057" stroke-width="2.5"/>
+  <text x="500" y="654" font-size="11" fill="#495057">válvula(−) → GND de la fuente 12V</text>
+
+  <!-- Diodo -->
+  <rect x="700" y="628" width="220" height="26" rx="6" fill="#fff5f5" stroke="#e03131" stroke-width="1.5"/>
+  <text x="810" y="646" font-size="11" text-anchor="middle" fill="#c92a2a">Diodo 1N4007 en paralelo con la válvula (raya → lado +)</text>
+
+  <!-- Nota pin8 -->
+  <text x="640" y="360" font-size="11" fill="#0d7377">Pin 8 = señal de control</text>
+</svg>
